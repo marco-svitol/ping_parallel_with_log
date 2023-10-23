@@ -1,11 +1,12 @@
 #!/bin/bash
 if [ -n "$3" ]; then
     output_file="$3"
+    printf "# $(date) ######\n" >> $output_file
+    parallel -j 1 -a "$1" "echo ping -c1 -W1 on {}" >> $output_file
 else
     output_file=""
 fi
-printf "# $(date) ######\n" >> $output_file
-parallel -j 1 -a "$1" "echo ping -c1 -W1 on {}" >> $output_file
+
 while true
 do
     printf "# $(date) ######\n" | tee -a $output_file
