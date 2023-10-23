@@ -1,10 +1,17 @@
 # Parallel ping with log
-Simple bash script to test ping on multiple destinations. Only unreachable destinations are logged.
+Simple bash script to test ping on multiple destinations.
 
-Needs parallel:
+Infinite loop test.
 
-apt install parallel
+Only unreachable destinations are logged.
 
-Usage:
+## Prerequisite
+Install [parallel](https://www.gnu.org/software/parallel/) on your system:
 
-parallelping.sh {hostlist} {sleep in seconds between test} [outputfilename]
+```apt install parallel```
+
+## Usage:
+
+parallelping &lt;hostlist> &lt;seconds_between_each_test> [outputfilename]
+
+Hosts are listed one per line, no commas.
