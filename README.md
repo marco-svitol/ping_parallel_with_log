@@ -1,4 +1,4 @@
-# ping_parallel_with_log
+# Parallel ping with log
 Simple bash script to test ping on multiple destinations. Only unreachable destinations are logged.
 
 Needs parallel:
